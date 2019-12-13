@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<link rel='stylesheet' type='text/css' href='pagecss.css'>
+<title>hello</title>
+
+<body>
+
+<div class='title'>
+	<h>Time since Aadam watched Episode 1 of Shingeki no Kyojin</h>
+</div>
+
+<div class='text'>
+
+<p id='timer' class='timer'></p>
+
+<script>
+var start_date = new Date('Dec 9, 2019 21:30:00').getTime();
+var now = new Date().getTime();
+var time_since = now - start_date;
+
+var x = setInterval(function() {
+	var now = new Date().getTime();
+	var time_since = now - start_date;
+
+	var days = Math.floor(time_since / (1000 * 60 * 60 * 24));
+	var hours = Math.floor((time_since % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	var minutes = Math.floor((time_since % (1000 * 60 * 60)) / (1000 * 60));
+	var seconds = Math.floor((time_since % (1000 * 60)) / 1000);
+
+	document.getElementById('timer').innerHTML = days + 'd' + hours + ' : ' + minutes + ' : ' + seconds;
+
+}, 1000);
+</script>
+</div>
+
+<div class='image'>
+	<img src='bkg.png' class='meme'>
+</div>
+
+</body>
+</html>
