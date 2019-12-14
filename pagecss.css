@@ -4,6 +4,10 @@ body{
 	color: #d7ceff;
 }
 
+h1{
+	font-family: 'Calibri';
+}
+
 p{
 	font-family: 'Calibri';
 	color: #1d1c2c;
@@ -11,7 +15,7 @@ p{
 
 .title{
 	text-align: center;
-	font-size: 3vw;
+	font-size: 1.5vw;
 }
 
 
