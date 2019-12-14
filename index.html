@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html>
 <link rel='stylesheet' type='text/css' href='pagecss.css'>
-<title>hello</title>
+<link rel="shortcut icon" href="https://cdn.myanimelist.net/images/userimages/6643756.jpg" />
+<title>what you lookin at you shmuck</title>
 
 <body>
 
@@ -8,33 +10,82 @@
 	<h>Time since Aadam watched Episode 1 of Shingeki no Kyojin</h>
 </div>
 
-<div class='text'>
+<div class='timer_container'>
+	<div class='days_div'>
+		<p id='days_text' class='days_text'>--</p>
+	</div>
+	<div class='hours_div'>	
+		<p id='hours_text' class='hours_text'>--</p>
+	</div> 
+	<div class='colon_div'><p class='colon_text'> : </p></div>
+	<div class='mins_div'>
+		<p id='mins_text' class='mins_text'>--</p>
+	</div>
+	<div class='colon_div'><p class='colon_text'> : </p></div>
+	<div class='secs_div'>
+		<p id='secs_text' class='secs_text'>--</p>
+	</div>
+</div>
 
-<p id='timer' class='timer'></p>
+<div class='text'>
 
 <script>
 var start_date = new Date('Dec 9, 2019 21:30:00').getTime();
 var now = new Date().getTime();
 var time_since = now - start_date;
+var eps_rem = 58;
 
 var x = setInterval(function() {
 	var now = new Date().getTime();
 	var time_since = now - start_date;
+	var time_finish = time_since * eps_rem;
 
 	var days = Math.floor(time_since / (1000 * 60 * 60 * 24));
 	var hours = Math.floor((time_since % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 	var minutes = Math.floor((time_since % (1000 * 60 * 60)) / (1000 * 60));
 	var seconds = Math.floor((time_since % (1000 * 60)) / 1000);
 
-	document.getElementById('timer').innerHTML = days + 'd ' + hours + ':' + minutes + ':' + seconds;
+	var days_fin = Math.floor(time_finish / (1000 * 60 * 60 * 24));
+	var hours_fin = Math.floor((time_finish % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	var minutes_fin = Math.floor((time_finish % (1000 * 60 * 60)) / (1000 * 60));
+	var seconds_fin = Math.floor((time_finish % (1000 * 60)) / 1000);
+
+	document.getElementById('days_text').innerHTML = days + 'd';
+	document.getElementById('hours_text').innerHTML = hours;
+	document.getElementById('mins_text').innerHTML = minutes;
+	document.getElementById('secs_text').innerHTML = seconds;
+
+	document.getElementById('finish_time').innerHTML = days_fin + 'd ' + hours_fin + ':' + minutes_fin + ':' + seconds_fin
 
 }, 1000);
 </script>
 </div>
 
+<div class='data'>
+	<div class='rem_div'>
+		<a>Episodes Remaining: </a>
+		<a id='eps_rem'></a><br>
+	</div>
+	<div class='est_div'>
+		<a>Estimated Time Until Finish: </a>
+		<a id='finish_time'></a>
+	</div>
+</div>
+
+<script>
+document.getElementById('eps_rem').innerHTML = eps_rem
+</script>
+
 <div class='image'>
 	<img src='bkg.png' class='meme'>
 </div>
+
+<!--
+<form>
+	<input type='password'></br>
+	<button type='button' >Reset</button>
+</form>
+-->
 
 </body>
 </html>
