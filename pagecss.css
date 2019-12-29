@@ -14,8 +14,18 @@ p{
 }
 
 .title{
+	font-size: 15px;
+	display: inline-flex;
+	align-items: center;
 	text-align: center;
-	font-size: 1.5vw;
+	margin: 10;
+
+}
+
+.title .title_text{
+	display: block;
+	margin: auto;
+	vertical-align: center;
 }
 
 
