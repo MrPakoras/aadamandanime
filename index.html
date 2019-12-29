@@ -31,31 +31,44 @@
 
 <script>
 var start_date = new Date('Dec 22, 2019 19:23:00').getTime();
+var init_start_date = new Date('Dec 09 2019 21:30:00').getTime();
+
 var now = new Date().getTime();
 var time_since = now - start_date;
-var eps_rem = 51;
+var eps_watched = 8;
+var eps_rem = 59 - eps_watched;
 
 var x = setInterval(function() {
 	var now = new Date().getTime();
 	var time_since = now - start_date;
-	var time_finish = time_since * eps_rem;
+	
+
+	var init_time_since = now - init_start_date;
+	var time_finish = (init_time_since / eps_watched) * 59;
+
 
 	var days = Math.floor(time_since / (1000 * 60 * 60 * 24));
 	var hours = Math.floor((time_since % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 	var minutes = Math.floor((time_since % (1000 * 60 * 60)) / (1000 * 60));
 	var seconds = Math.floor((time_since % (1000 * 60)) / 1000);
-
-	var days_fin = Math.floor(time_finish / (1000 * 60 * 60 * 24));
+	
+	var years_fin = Math.floor(time_finish / (1000 * 60 * 60 * 24 * 365));
+	var days_fin = Math.floor((time_finish % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
 	var hours_fin = Math.floor((time_finish % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 	var minutes_fin = Math.floor((time_finish % (1000 * 60 * 60)) / (1000 * 60));
 	var seconds_fin = Math.floor((time_finish % (1000 * 60)) / 1000);
+
 
 	document.getElementById('days_text').innerHTML = days + 'd';
 	document.getElementById('hours_text').innerHTML = hours;
 	document.getElementById('mins_text').innerHTML = minutes;
 	document.getElementById('secs_text').innerHTML = seconds;
 
-	document.getElementById('finish_time').innerHTML = days_fin + 'd ' + hours_fin + ':' + minutes_fin + ':' + seconds_fin
+	document.getElementById('finish_time').innerHTML = years_fin + 'y ' + days_fin + 'd ' + hours_fin + ':' + minutes_fin + ':' + seconds_fin;
+
+	var finish_date = now + time_finish;
+	var finish_date_obj = new Date(finish_date)
+	document.getElementById('finish_date_str').innerHTML = finish_date_obj.toGMTString();
 
 }, 1000);
 </script>
@@ -69,6 +82,10 @@ var x = setInterval(function() {
 	<div class='est_div'>
 		<a>Estimated Time Until Finish: </a>
 		<a id='finish_time'></a>
+	</div>
+	<div class='est_date_div'>
+		<a>Estimated Finish Date: </a>
+		<a id='finish_date_str'></a>
 	</div>
 </div>
 
