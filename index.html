@@ -56,11 +56,11 @@ var x = setInterval(function() {
 	var minutes = Math.floor((time_since % (1000 * 60 * 60)) / (1000 * 60));
 	var seconds = Math.floor((time_since % (1000 * 60)) / 1000);
 	
-	var years_fin = Math.floor(time_finish / (1000 * 60 * 60 * 24 * 365));
-	var days_fin = Math.floor((time_finish % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
-	var hours_fin = Math.floor((time_finish % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-	var minutes_fin = Math.floor((time_finish % (1000 * 60 * 60)) / (1000 * 60));
-	var seconds_fin = Math.floor((time_finish % (1000 * 60)) / 1000);
+	//var years_fin = Math.floor(time_finish / (1000 * 60 * 60 * 24 * 365));
+	//var days_fin = Math.floor((time_finish % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+	//var hours_fin = Math.floor((time_finish % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	//var minutes_fin = Math.floor((time_finish % (1000 * 60 * 60)) / (1000 * 60));
+	//var seconds_fin = Math.floor((time_finish % (1000 * 60)) / 1000);
 
 	var years_tss = Math.floor(init_time_since / (1000 * 60 * 60 * 24 * 365));
 	var days_tss = Math.floor((init_time_since % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
@@ -73,11 +73,11 @@ var x = setInterval(function() {
 	document.getElementById('mins_text').innerHTML = minutes;
 	document.getElementById('secs_text').innerHTML = seconds;
 
-	document.getElementById('finish_time').innerHTML = years_fin + 'y ' + days_fin + 'd ' + hours_fin + ':' + minutes_fin + ':' + seconds_fin;
+	// document.getElementById('finish_time').innerHTML = years_fin + 'y ' + days_fin + 'd ' + hours_fin + ':' + minutes_fin + ':' + seconds_fin;
 
 	var finish_date = now + time_finish;
 	var finish_date_obj = new Date(finish_date)
-	document.getElementById('finish_date_str').innerHTML = finish_date_obj.toGMTString();
+	// document.getElementById('finish_date_str').innerHTML = finish_date_obj.toGMTString();
 
 	document.getElementById('tss').innerHTML = years_tss + 'y ' + days_tss + 'd ' + hours_tss + ':' + minutes_tss + ':' + seconds_tss;
 
@@ -95,7 +95,7 @@ var x = setInterval(function() {
 		<a id='finish_time'></a>
 	</div>
 	<div class='est_date_div'>
-		<a>Estimated Finish Date: </a>
+		<a>Estimated Finish Date: -</a>
 		<a id='finish_date_str'></a>
 	</div>
 	<div>
