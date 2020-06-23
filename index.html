@@ -56,11 +56,11 @@ var x = setInterval(function() {
 	var minutes = Math.floor((time_since % (1000 * 60 * 60)) / (1000 * 60));
 	var seconds = Math.floor((time_since % (1000 * 60)) / 1000);
 	
-	//var years_fin = Math.floor(time_finish / (1000 * 60 * 60 * 24 * 365));
-	//var days_fin = Math.floor((time_finish % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
-	//var hours_fin = Math.floor((time_finish % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-	//var minutes_fin = Math.floor((time_finish % (1000 * 60 * 60)) / (1000 * 60));
-	//var seconds_fin = Math.floor((time_finish % (1000 * 60)) / 1000);
+	var years_fin = Math.floor(time_finish / (1000 * 60 * 60 * 24 * 365));
+	var days_fin = Math.floor((time_finish % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+	var hours_fin = Math.floor((time_finish % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	var minutes_fin = Math.floor((time_finish % (1000 * 60 * 60)) / (1000 * 60));
+	var seconds_fin = Math.floor((time_finish % (1000 * 60)) / 1000);
 
 	var years_tss = Math.floor(init_time_since / (1000 * 60 * 60 * 24 * 365));
 	var days_tss = Math.floor((init_time_since % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
