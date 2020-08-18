@@ -7,8 +7,8 @@
 <body>
 
 <div class='title'>
-	<h1 class='title_text'>Time since Aadam watched Episode </h1>
-	<h1 class='title_text' id='eps_watched_text'>-</h1>
+	<h1 class='title_text'>Time since Aadam watched P3 S2 Episode 24</h1>
+	<!--<h1 class='title_text' id='eps_watched_text'>-</h1>-->
 	<h1 class='title_text'> of JooooooooJO</h1>
 </div>
 
@@ -32,36 +32,38 @@
 <div class='text'>
 
 <script>
-var start_date = new Date('Jul 01 2020').getTime(); // Edit this
+var start_date = new Date('Aug 05 2020 12:54:00').getTime(); // Edit this
 var init_start_date = new Date('Jun 22 2020 23:00:00').getTime();
 
 var now = new Date().getTime();
 var time_since = now - start_date;
 
-var eps_watched = 26; // Edit this
+var eps_watched = 74; // Edit this
 document.getElementById('eps_watched_text').innerHTML = '\xa0' + eps_watched + '\xa0';
-var eps_rem = 154 - eps_watched;
+var eps_rem = 152 - eps_watched;
 
 var x = setInterval(function() {
 	var now = new Date().getTime();
 	var time_since = now - start_date;
-	
+
 
 	var init_time_since = now - init_start_date;
 	var time_finish = ((init_time_since / eps_watched) * eps_rem);
 
-
+	// Time since last episode
 	var days = Math.floor(time_since / (1000 * 60 * 60 * 24));
 	var hours = Math.floor((time_since % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 	var minutes = Math.floor((time_since % (1000 * 60 * 60)) / (1000 * 60));
 	var seconds = Math.floor((time_since % (1000 * 60)) / 1000);
 	
+	// Estimated time to complete anime
 	var years_fin = Math.floor(time_finish / (1000 * 60 * 60 * 24 * 365));
 	var days_fin = Math.floor((time_finish % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
 	var hours_fin = Math.floor((time_finish % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 	var minutes_fin = Math.floor((time_finish % (1000 * 60 * 60)) / (1000 * 60));
 	var seconds_fin = Math.floor((time_finish % (1000 * 60)) / 1000);
-
+	
+	// Time since starting anime
 	var years_tss = Math.floor(init_time_since / (1000 * 60 * 60 * 24 * 365));
 	var days_tss = Math.floor((init_time_since % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
 	var hours_tss = Math.floor((init_time_since % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
