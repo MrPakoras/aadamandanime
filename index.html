@@ -7,9 +7,9 @@
 <body>
 
 <div class='title'>
-	<h1 class='title_text'>Time since Aadam watched P3 S2 Episode 24</h1>
-	<!--<h1 class='title_text' id='eps_watched_text'>-</h1>-->
-	<h1 class='title_text'> of JooooooooJO</h1>
+	<h1 class='title_text'>Time since Aadam watched P3S2 Episode 24 of JooooooooJO</h1>
+	<!--<h1 class='title_text' id='eps_watched_text'>-</h1>
+	<h1 class='title_text'> of SnK</h1>-->
 </div>
 
 <div class='timer_container'>
@@ -39,30 +39,30 @@ var now = new Date().getTime();
 var time_since = now - start_date;
 
 var eps_watched = 74; // Edit this
-document.getElementById('eps_watched_text').innerHTML = '\xa0' + eps_watched + '\xa0';
+//document.getElementById('eps_watched_text').innerHTML = '\xa0' + eps_watched + '\xa0';
 var eps_rem = 152 - eps_watched;
 
 var x = setInterval(function() {
 	var now = new Date().getTime();
 	var time_since = now - start_date;
-
+	
 
 	var init_time_since = now - init_start_date;
 	var time_finish = ((init_time_since / eps_watched) * eps_rem);
 
-	// Time since last episode
+	// Time since last episode watched
 	var days = Math.floor(time_since / (1000 * 60 * 60 * 24));
 	var hours = Math.floor((time_since % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 	var minutes = Math.floor((time_since % (1000 * 60 * 60)) / (1000 * 60));
 	var seconds = Math.floor((time_since % (1000 * 60)) / 1000);
 	
-	// Estimated time to complete anime
+	// Estimated time until completion of anime
 	var years_fin = Math.floor(time_finish / (1000 * 60 * 60 * 24 * 365));
 	var days_fin = Math.floor((time_finish % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
 	var hours_fin = Math.floor((time_finish % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 	var minutes_fin = Math.floor((time_finish % (1000 * 60 * 60)) / (1000 * 60));
 	var seconds_fin = Math.floor((time_finish % (1000 * 60)) / 1000);
-	
+
 	// Time since starting anime
 	var years_tss = Math.floor(init_time_since / (1000 * 60 * 60 * 24 * 365));
 	var days_tss = Math.floor((init_time_since % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
@@ -111,7 +111,7 @@ document.getElementById('eps_rem').innerHTML = eps_rem
 </script>
 
 <div class='image'>
-	<img src='6.jpg' class='meme'>
+	<img src='bkg.png' class='meme'>
 </div>
 
 <!--
