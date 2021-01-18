@@ -7,9 +7,9 @@
 <body>
 
 <div class='title'>
-	<h1 class='title_text'>Time since Bilaal watched Episode </h1>
+	<h1 class='title_text'>Time since Aadam watched Episode </h1>
 	<h1 class='title_text' id='eps_watched_text'>-</h1>
-	<h1 class='title_text'> of One Piece</h1>
+	<h1 class='title_text'> of Megalo Box</h1>
 </div>
 
 <div class='timer_container'>
@@ -33,7 +33,7 @@
 
 <script>
 var start_date = new Date('Jan 01 2021').getTime(); // Edit this
-var init_start_date = new Date('Apr 15 2020').getTime();
+var init_start_date = new Date('Jan 01 2021').getTime();
 
 var now = new Date().getTime();
 var time_since = now - start_date;
@@ -41,7 +41,7 @@ var time_since = now - start_date;
 var eps_watched = 1; // Edit this
 document.getElementById('eps_watched_text').innerHTML = '\xa0' + eps_watched + '\xa0';
 
-var eps_total = 952
+var eps_total = 13
 /*
 fetch('file://./ep.txt')
   .then(response => response.text())
@@ -131,7 +131,13 @@ document.getElementById('eps_rem').innerHTML = eps_rem
 <div class='progbar'>
 	<h1>Progress Bar</h1>
 	<img src='progress_bar.png' >
+	<a id='perc_complete_text'></a>
 </div>
+
+<script>
+	var perc_complete = ((eps_watched/eps_total)*100).toFixed(2); // rounds to 2 decimal places
+	document.getElementById('perc_complete_text').innerHTML = 'Completion: '+perc_complete+'%';
+</script>
 
 </body>
 </html>

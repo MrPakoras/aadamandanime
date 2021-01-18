@@ -168,3 +168,10 @@ p{
 	height: 500px;
 	margin: auto;
 }
+
+.progbar{
+	background-color: #3b2b7d;
+	text-align: center;
+	padding: 10px;
+	border-radius: 5px;
+}
